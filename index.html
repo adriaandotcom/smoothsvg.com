@@ -7,8 +7,10 @@
   <body>
     <h1>Make SVG paths more smooth</h1>
     <p>
-      This is a simple tool to make SVG paths more smooth. Select an SVG file,
-      change the tolerance value, and see the difference.
+      This is a simple tool, made by
+      <a href="https://x.com/adriaandotcom">Adriaan</a>, to make SVG paths more
+      smooth. Select an SVG file, change the tolerance value, and see the
+      difference.
     </p>
     <form>
       <input type="file" id="file" />
@@ -21,7 +23,9 @@
         value="2.5"
         id="tolerance"
       />
-      <button type="button" id="downloadBtn">Download smooth SVG</button>
+      <button type="button" id="downloadBtn" style="display: none">
+        Download smooth SVG
+      </button>
     </form>
     <div class="svgs">
       <div>
@@ -36,5 +40,8 @@
 
     <script type="text/javascript" src="/js/paper-0.12.15-full.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
+
+    <!-- 100% privacy-first analytics -->
+    <script src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
   </body>
 </html>

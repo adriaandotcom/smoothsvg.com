@@ -11,12 +11,14 @@ var fileInput = document.getElementById("file");
 var toleranceInput = document.getElementById("tolerance");
 var downloadBtn = document.getElementById("downloadBtn");
 var originalSVG;
+var filename = null;
 
 fileInput.addEventListener("change", function (event) {
   var files = event.target.files;
   for (var i = 0; i < files.length; i++) {
     var file = files[i];
     if (file.type.match("svg")) {
+      filename = file.name;
       originalProject.clear();
       simplifiedProject.clear();
 
@@ -27,6 +29,7 @@ fileInput.addEventListener("change", function (event) {
         setCanvasSize(bounds.width, bounds.height);
         paper.project = simplifiedProject;
         simplifyAndDraw(item);
+        downloadBtn.style.display = "unset";
       });
     }
   }
@@ -105,7 +108,18 @@ downloadBtn.addEventListener("click", function () {
   // Create a temporary anchor element and trigger a download
   var downloadLink = document.createElement("a");
   downloadLink.href = url;
-  downloadLink.download = "simplified-svg.svg";
+
+  if (filename) {
+    const seperator = filename.includes(" ")
+      ? " "
+      : filename.includes("_")
+      ? "_"
+      : "-";
+    const name = filename.endsWith(".svg") ? filename.slice(0, -4) : filename;
+    downloadLink.download = `${name}${seperator}smooth.svg`;
+  } else {
+    downloadLink.download = `smooth.svg`;
+  }
   document.body.appendChild(downloadLink);
   downloadLink.click();
 

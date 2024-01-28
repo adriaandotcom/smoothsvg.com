@@ -1,14 +1,16 @@
 body {
   --background-color: #f2f2f2;
-  --text-color: #4e4b4b;
   --heading-background-color: #c9c9c9;
+  --text-color: #4e4b4b;
+  --link-color: #a40674;
 }
 
 @media (prefers-color-scheme: dark) {
   body {
     --background-color: #3a3737;
-    --text-color: #f2f2f2;
     --heading-background-color: #4e4b4b;
+    --text-color: #f2f2f2;
+    --link-color: #fdb1e6;
   }
 }
 
@@ -22,6 +24,11 @@ body {
   flex-direction: column;
   min-height: 100vh;
   padding: 1rem;
+}
+
+a {
+  color: var(--link-color);
+  cursor: pointer;
 }
 
 .svgs {
