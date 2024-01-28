@@ -17,6 +17,9 @@
       smooth. Select an SVG file, change the tolerance value, and see the
       difference.
     </p>
+    <p>
+      It only works with paths, not with shapes. Your files stay in the browser.
+    </p>
     <form>
       <input type="file" id="file" />
       <label for="tolerance">Tolerance</label>
@@ -42,6 +45,13 @@
         <canvas id="canvasSimplified" width="500" height="500"></canvas>
       </div>
     </div>
+
+    <footer>
+      <p>
+        Convert handwritten reMarkable SVG files to a more smooth version (make
+        sure to use the fineliner).
+      </p>
+    </footer>
 
     <script type="text/javascript" src="/js/paper-0.12.15-full.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>

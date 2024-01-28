@@ -30,6 +30,8 @@ fileInput.addEventListener("change", function (event) {
         paper.project = simplifiedProject;
         simplifyAndDraw(item);
         downloadBtn.style.display = "unset";
+
+        if (window.sa_event) sa_event("svg_upload");
       });
     }
   }
@@ -126,4 +128,6 @@ downloadBtn.addEventListener("click", function () {
   // Clean up: remove the temporary link and revoke the object URL
   document.body.removeChild(downloadLink);
   URL.revokeObjectURL(url);
+
+  if (window.sa_event) sa_event("svg_download");
 });
