@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/app.css" />
+  </head>
+  <body>
+    <h1>Make SVG paths more smooth</h1>
+    <p>
+      This is a simple tool to make SVG paths more smooth. Select an SVG file,
+      change the tolerance value, and see the difference.
+    </p>
+    <form>
+      <input type="file" id="file" />
+      <label for="tolerance">Tolerance</label>
+      <input
+        type="number"
+        id="tolerance"
+        min="0"
+        step="1"
+        value="2.5"
+        id="tolerance"
+      />
+      <button type="button" id="downloadBtn">Download smooth SVG</button>
+    </form>
+    <div class="svgs">
+      <div>
+        <h2>Original SVG</h2>
+        <canvas id="canvasOriginal" width="500" height="500"></canvas>
+      </div>
+      <div>
+        <h2>Smooth SVG</h2>
+        <canvas id="canvasSimplified" width="500" height="500"></canvas>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/js/paper-0.12.15-full.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+  </body>
+</html>
