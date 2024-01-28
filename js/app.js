@@ -33,6 +33,12 @@ fileInput.addEventListener("change", function (event) {
 
         if (window.sa_event) sa_event("svg_upload");
       });
+    } else {
+      if (window.sa_event)
+        sa_event("wrong_file_type", {
+          type: file.type,
+        });
+      alert("Please select an SVG file.");
     }
   }
 });
